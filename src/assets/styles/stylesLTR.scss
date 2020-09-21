@@ -1,0 +1,20 @@
+.ltr {
+  .navbar {
+    form {
+      fa-icon {
+        right: 0.25rem;
+      }
+    }
+  }
+  .stepper {
+    .step {
+      &.active[label*="Shipping"] {
+        background-image: url(~src/assets/media/van.png);
+      }
+
+      &.active[label*="Payment"] {
+        background-image: url(~src/assets/media/wallet.png);
+      }
+    }
+  }
+}

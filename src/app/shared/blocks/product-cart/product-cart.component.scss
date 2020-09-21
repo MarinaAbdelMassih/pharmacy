@@ -1,0 +1,58 @@
+.explore {
+    cursor: pointer;
+    &:hover {
+        color: #094582;
+    }
+}
+
+.collection {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(4, minmax(calc(25% - 0.5rem - 4px), 1fr));
+    grid-auto-columns: minmax(calc(25% - 0.5rem - 4px), 1fr);
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    app-product-item {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.scroll-btn {
+    border: 2px solid var(--marine-blue);
+    padding: 0;
+    min-width: 3rem;
+    border-radius: 0.6rem;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    min-height: 2.5rem;
+
+    &:disabled {
+        background-color: unset;
+        color: var(--marine-blue) !important;
+        opacity: 0.25;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .collection {
+        grid-gap: 1rem;
+        grid-template-columns: repeat(2, minmax(calc(50% - 0.5rem - 2px), 1fr));
+        grid-auto-columns: minmax(calc(50% - 0.5rem - 2px), 1fr);
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .collection {
+        grid-template-columns: 70%;
+        grid-auto-columns: minmax(calc(70%), 1fr);
+    }
+}

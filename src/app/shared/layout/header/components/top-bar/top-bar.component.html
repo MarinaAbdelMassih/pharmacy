@@ -1,0 +1,118 @@
+<div class="bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand">
+            <div class="btn-group float-right" dropdown>
+              <button dropdownToggle type="button" class="pl-0 dropdown-toggle">
+                {{localStorage.getLang() === 'en' ? 'English' : 'عربي'}}
+                <span class="caret"></span>
+              </button>
+              <ul *dropdownMenu class="dropdown-menu" role="menu">
+                <li role="menuitem"><a class="dropdown-item" (click)="language('en')">English</a></li>
+                <li role="menuitem"><a class="dropdown-item" (click)="language('ar')">عربي</a></li>
+              </ul>
+            </div>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav" [ngClass]="localStorage.getLang() === 'en' ? 'ml-auto' : 'mr-auto'">
+              <li class="nav-item">
+                <a class="link nav-link afterline text-light menu-toggle" routerLink="home">{{"home"|translate}} </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="link nav-link afterline text-light menu-toggle"
+                  routerLink="/profile/wishlist">{{"wishlist"|translate}} </a>
+              </li>
+
+              <li *ngIf="authManager.getUserType() === 'CUSTOMER'" class="nav-item">
+                <a class="link nav-link afterline text-light menu-toggle" routerLink="profile">
+                  {{"my_account"|translate}}</a>
+              </li>
+
+              <li class="nav-item">
+                <a routerLink='/about-us' class="link nav-link afterline text-light menu-toggle">
+                  {{"about_us"|translate}}
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="link nav-link afterline text-white menu-toggle" routerLink='/contact-us'>
+                  {{"contact_us"|translate}} </a>
+              </li>
+              <li class="nav-item">
+                <a *ngIf="authManager.getUserType() === 'CUSTOMER'" class="link nav-link text-white"
+                  (click)="authManager.logout()">
+                  {{"logout"|translate}}
+                </a>
+                <a *ngIf="authManager.getUserType() !== 'CUSTOMER'" [routerLink]="['/login']"
+                  class="link nav-link text-white">
+                  {{"login"|translate}}
+                </a>
+              </li>
+              <li class="d-lg-none nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" id="navbarDropdown" role="button" data-toggle="dropdown">
+                  {{"categories"|translate}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li *ngFor="let category of categories">
+                <div class="ml-3 d-flex align-items-center">
+                  <a class="dropdown-item dark nav-link w-auto text-light menu-toggle" (click)="collapseNavbar()"
+                    routerLink="/products/{{category.slug}}" [state]="{ category: category }">
+                    {{category.name}}
+                  </a>
+                  <fa-icon (click)="showsubcategories($event, category)" *ngIf="category?.subCategories?.length"
+                    class="text-light" [icon]="faCaretDown">
+                  </fa-icon>
+                </div>
+                <div class="ml-4" *ngIf="category?.subCategories?.length && activeCatgory === category.id">
+              <li *ngFor="let item of category.subCategories">
+                <div class="d-flex align-items-center">
+                  <a class="dropdown-item nav-link dark w-auto text-light menu-toggle" (click)="collapseNavbar()"
+                    routerLink="/products/{{item.slug}}" [state]="{ category: item }">
+                    {{item.name}}
+                  </a>
+                  <fa-icon (click)="showsubcategories($event, category)" *ngIf="item?.subCategories?.length"
+                    class="text-light" [icon]="faCaretDown">
+                  </fa-icon>
+                </div>
+                <div class="ml-5" *ngIf="item?.subCategories?.length && activeCatgory === item.id">
+              <li class="d-flex align-items-center" *ngFor="let subItem of item.subCategories">
+                <a class="dropdown-item nav-link dark w-auto text-light menu-toggle" (click)="collapseNavbar()"
+                  routerLink="/products/{{subItem.slug}}" [state]="{ category: subItem }">
+                  {{subItem.name}}
+                </a>
+              </li>
+          </div>
+          </li>
+      </div>
+      </li>
+    </div>
+    </li>
+
+    <li class="d-lg-none nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-light" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        {{"our_services"|translate}}
+      </a>
+      <div class="dropdown dropdown-menu" aria-labelledby="navbarDropdown">
+        <a routerLink="brands" class="dropdown-item dark text-light">{{"brands"|translate}}</a>
+        <a class="dropdown-item dark">Dr. Call</a>
+        <a routerLink="delivery" class="dropdown-item dark text-light">
+          {{"delivery_area"}}</a>
+        <a class="dropdown-item dark">{{"support"|translate}}</a>
+        <a routerLink="cart" class="dropdown-item dark text-light">{{"my_cart"|translate}}</a>
+      </div>
+    </li>
+    </ul>
+  </div>
+  </nav>
+</div>
+</div>
+</div>
+</div>

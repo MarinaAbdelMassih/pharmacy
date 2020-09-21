@@ -1,0 +1,38 @@
+<section>
+  <div class="row pb-5 align-items-center">
+    <div class="col-8">
+      <h2 class="font-weight-bold dark">{{ collection?.name || title }}</h2>
+    </div>
+    <div *ngIf="collection?.id" class="col-4">
+      <h4 [ngClass]="localStorage.getLang() === 'en' ? 'float-right' : 'float-left'">
+        <a class="explore light font-weight-bold text-decoration-none" routerLink="/products/{{collection.id}}"
+          [state]="{ category: collection }">
+          {{"explore_all"|translate}}
+        </a>
+      </h4>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-12">
+      <div (scroll)="scrollListener()" #target class="collection">
+        <div *ngFor="let item of collection?.items ? collection?.items : collection">
+          <app-product-item [product]="item"></app-product-item>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3 d-none d-lg-flex">
+    <div class="col-12 d-flex  justify-content-end">
+      <button [disabled]="target.scrollLeft ==  (localStorage.getLang() === 'en' ? 0 : (target.scrollWidth - target.offsetWidth))" (click)="scroll(target,localStorage.getLang() === 'en' ? 'left': 'right')" class="scroll-btn mr-4"
+        mat-flat-button>
+        <fa-icon [icon]="faChevronLeft" *ngIf="localStorage.getLang() === 'en'"></fa-icon>
+        <fa-icon [icon]="faChevronRight" *ngIf="localStorage.getLang() === 'ar'"></fa-icon>
+      </button>
+      <button [disabled]="target.scrollLeft === (localStorage.getLang() === 'en' ? (target.scrollWidth - target.offsetWidth) : 0)"
+        (click)="scroll(target,localStorage.getLang() === 'en' ? 'right': 'left')" class="scroll-btn" mat-flat-button>
+        <fa-icon [icon]="faChevronRight" *ngIf="localStorage.getLang() === 'en'"> </fa-icon>
+        <fa-icon [icon]="faChevronLeft" *ngIf="localStorage.getLang() === 'ar'"> </fa-icon>
+      </button>
+    </div>
+  </div>
+</section>

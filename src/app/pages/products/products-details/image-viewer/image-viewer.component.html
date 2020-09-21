@@ -1,0 +1,17 @@
+
+<div class="viewer d-flex flex-column">
+    <div class="preview border rounded mb-3 text-right p-3" style.backgroundImage="url({{currentImage}})">
+        <fa-icon class="ml-auto" [icon]="faHeart" [style.color]="product?.favourite ? '#003366' : '#ded7d7'"></fa-icon>
+    </div>
+    <div class="thumbnails-grid">
+        <div *ngFor="let image of product?.images; let i = index" 
+        [style.borderColor]="image === currentImage ? '#707070' : ''"
+        class="thumbnails rounded text-center">
+            <img 
+            class="p-4"
+            [style.opacity]="image === currentImage ? 1 : 0.5" 
+            (click)="selectImage(image)" 
+            [src]="image">
+        </div>
+    </div>
+</div>

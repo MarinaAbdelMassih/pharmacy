@@ -1,0 +1,55 @@
+footer {
+    color: var(--marine-blue);
+    background-color: #fff;
+    padding: 10px;
+    border-top: 4px solid var(--marine-blue);
+}
+
+.icon {
+    color: var(--light-green);
+    font-size: 28px
+}
+
+.link {
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.bg {
+    cursor: pointer;
+    background-color: var(--marine-blue);
+    color: var(--white);
+    padding: 0 1rem;
+    max-width: 20rem;
+    border-radius: 0.5rem;
+    height: 5rem;
+    &:first-of-type fa-icon {
+        font-size: 2.5rem;
+    }
+    &:last-of-type fa-icon {
+        font-size: 2rem;
+    }
+}
+
+.down {
+    margin: 0px !important;
+    font-size: 7px;
+}
+
+.app {
+    font-size: 19px;
+}
+
+.google {
+    font-size: 16px;
+}
+
+h2 {
+    font-size: 23px !important;
+}
+
+h6 {
+    font-size: 15px;
+    color: #000;
+    font-weight: 600;
+}

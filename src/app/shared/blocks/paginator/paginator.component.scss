@@ -1,0 +1,25 @@
+button {
+    &:not(.mat-primary) {
+        border-radius: 2px;
+        border: 1px solid black;
+        color: var(--light-grey);
+    }
+    &.pagination-btn {
+        border-color: var(--light-grey);
+    }
+    &:not(:last-of-type) {
+        margin-right: 1rem;
+    }
+    &.active {
+        background-color: var(--marine-blue);
+        color: var(--white);
+    }
+    min-width: 3rem;
+    min-height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 0.2rem;
+    padding: 0;
+    font-size: 1.25rem;
+    border: 1px solid var(--marine-blue);
+}

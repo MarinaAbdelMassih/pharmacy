@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="dark font-weight-bold">{{"checkout"|translate}}</h2>
+        </div>
+    </div>
+    <mat-divider class="mt-1"></mat-divider>
+    <div class="row">
+        <div class="col-12 my-3 my-md-4">
+            <app-checkout-stepper [shippingInformationStepValid]="shippingInformationStepValid" [orderPlaced]="" [activeStep]="activeStep" (stepChanged)="stepChanged($event, checkoutEl)"></app-checkout-stepper>
+        </div>
+    </div>
+    <div #checkoutEl class="flex-nowrap row" dir="ltr">
+        <div class="col-12" [dir]="localStorage.getLang() === 'en' ? 'ltr' : 'rtl'">
+            <app-shipping-information (stepValid)="shippingInformationValid($event)" (showPaymentMethods)="stepChanged($event, checkoutEl)"></app-shipping-information>
+        </div>
+        <div class="col-12" [dir]="localStorage.getLang() === 'en' ? 'ltr' : 'rtl'">
+            <app-payment [shippingInformation]="shippingInformation" (showShippingInfo)="stepChanged($event, checkoutEl)"></app-payment>
+        </div>
+    </div>
+</div>

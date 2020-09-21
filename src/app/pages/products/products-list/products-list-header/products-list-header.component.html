@@ -1,0 +1,24 @@
+<div class="row align-items-center justify-content-between mb-4">
+    <div class="col-6 col-md-4">
+        <!-- <h4 class="light">Showing 1-12 of 60</h4> -->
+    </div>
+    <div class="col-6 col-md-5 offset-md-3">
+        <div class="dropdown border rounded">
+            <button 
+            class="btn dropdown-toggle d-flex align-items-center justify-content-between" 
+            type="button"
+            id="dropdownMenuButton" 
+            data-toggle="dropdown">
+                {{currentValue}} 
+                <span class="material-icons">
+                    keyboard_arrow_down
+                </span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a *ngFor="let value of values" (click)="filterChanged(value)" class="dropdown-item">
+                    {{value}}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

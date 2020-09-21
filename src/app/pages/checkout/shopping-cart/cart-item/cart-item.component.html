@@ -1,0 +1,28 @@
+<div class="cart-item d-flex justify-content-between align-items-center">
+    <div class="image-wrapper border rounded d-flex justify-content-center align-items-center">
+        <img [src]="item?.images[0]">
+    </div>
+    <div [ngClass]="localStorage.getLang() === 'en' ? 'pl-4 pl-md-5' : 'pr-4 pr-md-5'">
+        <h3 class="dark mb-3 font-weight-bold w-75">
+            {{item?.name}}
+        </h3>
+        <!-- <span class="d-block mb-3 qty font-weight-bold">500 Mg / 100 Pills  </span> -->
+        <span class="d-block price font-weight-bold dark">
+            {{ item.discount?.discounted_rate ? item.discount?.discounted_rate : item?.standard_rate}} {{"LE"|translate}}
+        </span>
+        <div class="d-flex d-lg-none mt-3">
+            <app-stepper (countEmitter)="changeItemQty($event)" [count]="item?.qty"></app-stepper>
+        </div>
+    </div>
+    <div class="d-none d-lg-block">
+        <app-stepper (countEmitter)="changeItemQty($event)" [count]="item?.qty"></app-stepper>
+    </div>
+    <div class="text-center">
+        <span class="total-price font-weight-bold">{{item.discount?.discounted_rate ? item.discount?.discounted_rate * item?.qty : item?.standard_rate * item?.qty}} {{"LE"|translate}}</span>
+    </div>
+    <div class="text-center d-flex justify-content-center">
+        <span (click)="deleteItem(item)" class="material-icons text-right">
+            close
+        </span>
+    </div>
+</div>

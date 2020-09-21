@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-12">
+    <carousel class="te-muehldorfer-slider position-relative">
+      <slide *ngFor="let slide of slider">
+        <div class="slide" [style.background-image]="'url(' + slide.image + ')'"></div>
+        <!-- <img [src]="slide.image" style="display: block; width: 100%;"> -->
+      </slide>
+    </carousel>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<mat-accordion>
+    <mat-expansion-panel expanded>
+      <mat-expansion-panel-header class="mb-3">
+        <mat-panel-title>
+          {{title}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-checkbox (change)="checkAll($event)" [checked]="allChecked">{{'all'|translate}}</mat-checkbox>
+      <mat-checkbox 
+      *ngFor="let filter of filters; let i = index" 
+      (change)="filterChanged($event, i)" 
+      [checked]="filter.checked">{{title}}</mat-checkbox>
+    </mat-expansion-panel>
+  </mat-accordion>

@@ -1,0 +1,35 @@
+.slide {
+    height: 35rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0.5rem;
+}
+
+::ng-deep .carousel-control-prev-icon {
+    background-image: url('~src/assets/media/carousel-left.png');
+}
+
+::ng-deep .carousel-control-next-icon {
+    background-image: url('~src/assets/media/carousel-right.png')
+}
+
+::ng-deep .carousel-control-prev-icon,
+::ng-deep .carousel-control-next-icon {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (max-width: 575px) {
+    .slide {
+        height: 20rem;
+    }
+
+    ::ng-deep .carousel-control-prev-icon,
+    ::ng-deep .carousel-control-next-icon {
+        cursor: pointer;
+        width: 2rem;
+        height: 2rem;
+    }
+}

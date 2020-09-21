@@ -1,0 +1,50 @@
+.mat-divider {
+    margin: 1rem 0;
+}
+
+h4, p, .dropdown {
+    font-family: Nunito-Bold;
+}
+
+.dropdown {
+    width: 13rem;
+    border-radius: 0.75rem;
+}
+
+
+.dropdown-toggle, 
+.dropdown-item {
+    color: var(--dark-grey);
+}
+
+.footer {
+    height: 5rem;
+    #add {
+        width: 50%;
+        font-size: 1.4rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+    }
+}
+
+p, span {
+    font-size: 1.25rem;
+}
+
+@media (max-width: 992px) {
+    .variants {
+        width: 100%;
+        .dropdown {
+            width: 50%;
+            border-radius: 0.75rem;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .footer {
+        #add {
+            width: 100%;
+        }
+    }
+}

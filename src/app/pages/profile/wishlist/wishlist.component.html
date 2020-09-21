@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="dark font-weight-bold mb-4">{{"wishlist"|translate}}</h3>
+            <hr>
+        </div>
+    </div>
+    <!-- Wishlist Component -->
+    <div *ngIf="favorites?.length; else placeholder" class="row">
+        <div *ngFor="let item of favorites" class="col-12 col-md-6 col-lg-4">
+            <app-product-item [wishlist]="true" [product]="item"></app-product-item>
+        </div>
+    </div>
+    <!-- Appear if wishlist is empty -->
+    <ng-template #placeholder>
+        <div class="row">
+            <div class="col-12 text-center mt-5">
+                <h4 class="dark font-weight-bold mt-3">{{"YOURWISHLISTISEMPTY"|translate}}</h4>
+                <button type="button" mat-button>{{"shopNow"|translate}}</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

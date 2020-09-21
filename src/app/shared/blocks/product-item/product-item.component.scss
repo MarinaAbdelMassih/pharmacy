@@ -1,0 +1,57 @@
+.title {
+    color: var(--marine-blue);
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+.percent {
+    padding: 3px 15px;
+    border-radius: 0.9rem;
+    background-color: var(--marine-blue);
+    height: 2rem;
+    font-size: 1.2rem;
+}
+
+.card fa-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+button {
+    font-size: 1.25rem;
+    width: 100%;
+    color: white;
+    background-color: var(--marine-blue);
+    border: 1px solid var(--marine-blue);
+    border-radius: 0.5rem;
+    margin-bottom:15px;
+}
+
+.price {
+    color: var(--marine-blue);
+    font-size: 1.3rem;
+    overflow: auto;
+}
+
+.prev-price {
+    text-decoration: line-through;
+    font-size: 1.3rem;
+    color: rgb(205 205 210);
+}
+
+.stepper {
+    padding: 0.4rem 0.6rem;
+}
+
+.img-fluid {
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 15rem;
+    min-height: 15rem;
+}

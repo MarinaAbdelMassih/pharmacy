@@ -1,0 +1,58 @@
+<footer>
+    <div class="container">
+        <div class="row mt-3 justify-content-between">
+            <div class="col-lg-4 col-md-6">
+                <img src="assets/media/agzza.jpg" class="img-fluid mb-5">
+                <p class="mb-5 text-dark">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum corrupti
+                    beatae quas deserunt asperiores voluptas iste aliquam,
+                    ullam reiciendis libero consequuntur officiis non odio debitis fuga quidem ratione maiores esse!</p>
+                <div class="d-none d-md-block ">
+                        <h4 class="dark font-weight-bold pt-5 mb-4">{{"follow_us"|translate}}</h4>
+                        <fa-icon [icon]="faFacebook" class="icon px-2"></fa-icon>
+                        <fa-icon [icon]="faTwitter" class="icon px-2"></fa-icon>
+                        <fa-icon [icon]="faInstagram" class="icon px-2"></fa-icon>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3">
+                <h2 class="mb-5 mt-3 font-weight-bold">{{"explore_agzza"|translate}}</h2>
+                <h6 *ngFor="let category of categories" routerLink="products/{{category.slug}}" [state]="{ category: category }" class="pb-4 mb-0 link">
+                    {{category.name}}
+                </h6>
+            </div>
+            <div class="col-lg-2 col-md-3">
+
+                <h2 class="mb-5 mt-3 font-weight-bold link">{{"discover"|translate}}</h2>
+                <h6 routerLink="/" class="pb-4 mb-0 link">{{"home"|translate}}</h6>
+                <h6 routerLink="/about-us" class="pb-4 mb-0 link">{{"about_us"|translate}}</h6>
+                <h6 routerLink="/delivery" class="pb-4 mb-0 link">{{"delivery"|translate}}</h6>
+                <h6 routerLink="/privacy-policy" class="pb-4 mb-0 link">{{"privacy_policy"|translate}}</h6>
+                <h6 routerLink="/contact-us" class="pb-4 mb-0 link">{{"contact_us"|translate}}</h6>
+
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h2 class="mb-5 mt-3 font-weight-bold">{{"download_agzza"|translate}}</h2>
+                <div class="bg d-flex align-items-center mb-4">
+                    <fa-icon class="mx-4" [icon]="faApple"></fa-icon>
+                    <div>
+                        <p class="down">Download on the</p>
+                        <h3 class="app mb-0">App Store</h3>
+                    </div>
+                </div>
+                <div class="bg d-flex align-items-center">
+                    <fa-icon class="mx-4" [icon]="faGooglePlay"></fa-icon>
+                    <div>
+                        <p class="down">Android App on</p>
+                        <h3 class="app mb-0">Google Play</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <h2 class="dark font-weight-bold pt-5 mb-4">{{"follow_us"|translate}}</h2>
+                <fa-icon [icon]="faFacebook" class="icon px-2"></fa-icon>
+                <fa-icon [icon]="faTwitter" class="icon  px-2"></fa-icon>
+                <fa-icon [icon]="faInstagram" class="icon px-2"></fa-icon>
+            </div>
+        </div>
+    </div>
+</footer>

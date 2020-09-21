@@ -1,0 +1,48 @@
+::ng-deep .ng5-slider {
+    z-index: 0;
+}
+
+::ng-deep .ng5-slider .ng5-slider-pointer {
+    background-color: transparent !important;
+    background: #fff !important;
+    border: 3px solid var(--marine-blue);
+    width: 17px !important;
+    height: 17px !important;
+    top: -6px !important;
+    border-radius: 50% !important;
+}
+
+::ng-deep .ng5-slider .ng5-slider-bar {
+    height: 4px !important;
+}
+
+::ng-deep .ng5-slider .ng5-slider-pointer:after {
+    content: none !important;
+}
+
+::ng-deep .ng5-slider .ng5-slider-selection {
+    background-color: var(--marine-blue) !important;
+}
+
+::ng-deep .ng5-slider .ng5-slider-bubble {
+    &::after {
+        content: ' LE';
+    }
+
+    color: var(--marine-blue) !important;
+    font-size: 1rem !important;
+}
+
+small {
+    font-size: 1.5rem;
+    color: var(--marine-blue);
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    ::ng-deep .ng5-slider .ng5-slider-bubble {
+        bottom: 10px !important;
+    }
+
+}

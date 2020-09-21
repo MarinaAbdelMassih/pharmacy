@@ -1,0 +1,133 @@
+<div class="row my-4">
+    <div class="col-lg-7">
+        <div class="border rounded mb-5 mb-md-3 p-3 ">
+            <h4 class="font-weight-bold dark mb-4">{{'your_information'|translate}}</h4>
+            <div class="row">
+                <div class="col-lg-3">
+                    <h5 class="p1">{{"user_name"|translate}}</h5>
+                    <h5 class="p1">{{"phone_number"|translate}}</h5>
+                </div>
+                <div class="col-lg-9">
+                    <h5 class="p2">{{shippingInformation?.contact?.name}}</h5>
+                    <h5 class="p2">{{shippingInformation?.contact?.phone}}</h5>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="border rounded mb-5 mb-md-3 p-3 ">
+            <h4 class="font-weight-bold dark mb-4">{{"addressDetails"|translate}}</h4>
+            <h5 class="p2">{{shippingInformation?.address?.line1}}</h5>
+            <h5 class="p2">{{shippingInformation?.address?.line2}}</h5>
+        </div>
+        <h4 class="font-weight-bold dark mb-3">{{"payment_method"|translate }}</h4>
+
+        <ul class="list-group mt-2 mb-5 mb-md-2 p-0">
+            <li class="list-group-item py-3">
+                <p class="font-weight-bold mb-0">{{"cash_on_delivery"|translate}}</p>
+                <label class="containerr" [ngClass]="localStorage.getLang() === 'en' ? 'float-right' : 'float-left'">
+                    <input (change)="paymentMethodChanged('CASH')" type="radio" checked="checked" name="radio">
+                    <span class="checkmark"></span>
+                </label>
+            </li>
+            <!-- <li class="list-group-item py-3">
+                <p class="font-weight-bold mb-0">Add Credit /Debit Card</p>
+                <label class="containerr float-right">
+                    <input (change)="paymentMethodChanged('CREDIT_CARD')" type="radio" name="radio">
+                    <span class="checkmark"></span>
+                </label>
+            </li> -->
+        </ul>
+    </div>
+
+    <div class="col-lg-5 summary">
+        <div class="border rounded">
+            <h4 class="font-weight-bold dark m-3">{{"your_order_summary"|translate}}</h4>
+            <div *ngFor="let item of cartManager.cartItems.value" class="cont d-flex pb-2">
+                <img [src]="item?.images[0]" [ngClass]="localStorage.getLang() === 'en' ? 'mr-2' : 'ml-2'">
+                <div class="w-100">
+                    <h4 class="font-weight-bold dark">{{item?.name}}</h4>
+                    <div class="row">
+                        <div class="col-8 col-md-8">
+                            <p class="font-weight-extra-bold dark">
+                                {{ item.discount?.discounted_rate ? item.discount?.discounted_rate : item?.standard_rate}} {{"LE"|translate}}
+                            </p>
+                            <small *ngIf="item.discount" class="font-weight-bold old-price">
+                                {{ item?.standard_rate}} {{"LE"|translate}}
+                            </small>
+                        </div>
+                        <div class="col-4 col-md-4">
+                            <p class="mb-0 font-weight-medium">x{{item?.qty}}</p>
+                            <p class="font-weight-extra-bold dark">
+                                {{ item.discount?.discounted_rate ? item.discount?.discounted_rate * item?.qty : item?.standard_rate * item?.qty}} {{"LE"|translate}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cont d-flex px-2">
+                <input [value]="promoCode" (change)="promoCode = $event.target.value" type="text" class="w-75 form-control" placeholder="{{'add_promo_code'|translate}}">
+                <button type="button" (click)="validatePromoCode()" class="ml-2 text-white flex-grow-1" mat-button>{{"add"|translate}}</button>
+            </div>
+            <div class="cont pb-0">
+                <div class="row">
+                    <div class="col-6">
+                        <h5 class="font-weight-bold dark">{{"subTotal"|translate}}</h5>
+                    </div>
+                    <div class="col-6" [ngClass]="localStorage.getLang() === 'en' ? 'text-right' : 'text-left'">
+                        <p class="font-weight-bold price">{{cartManager.cartValues.value.total_price}} {{"LE"|translate}}</p>
+                    </div>
+                </div>
+                <div *ngIf="cartManager.cartValues.value.shipping_rate" class="row">
+                    <div class="col-6">
+                        <h5 class="font-weight-bold dark">{{"shipping"|translate}}</h5>
+                    </div>
+                    <div class="col-6" [ngClass]="localStorage.getLang() === 'en' ? 'text-right' : 'text-left'">
+                        <p class="font-weight-bold price">{{cartManager.cartValues.value.shipping_rate}} {{"LE"|translate}}</p>
+                    </div>
+                </div>
+                <div *ngIf="cartManager.cartValues.value.discount" class="row">
+                    <div class="col-6">
+                        <h5 class="font-weight-bold dark">{{"discount"|translate}}</h5>
+                    </div>
+                    <div class="col-6" [ngClass]="localStorage.getLang() === 'en' ? 'text-right' : 'text-left'">
+                        <p class="font-weight-bold price">{{cartManager.cartValues.value.discount}} {{"LE"|translate}}</p>
+                    </div>
+                </div>
+                <div *ngIf="cartManager.cartValues.value.vat" class="row">
+                    <div class="col-6">
+                        <h5 class="font-weight-bold dark">{{"VAT"|translate}}</h5>
+                    </div>
+                    <div class="col-6" [ngClass]="localStorage.getLang() === 'en' ? 'text-right' : 'text-left'">
+                        <p class="font-weight-bold price">{{cartManager.cartValues.value.vat}} {{"LE"|translate}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space row">
+                <div class="col-6">
+                    <h4 class="font-weight-bold dark">{{"grandTotal"|translate}}</h4>
+                </div>
+                <div class="col-6" [ngClass]="localStorage.getLang() === 'en' ? 'text-right' : 'text-left'">
+                    <h4 class="font-weight-bold">{{cartManager.cartValues.value.final_total_price}} {{"LE"|translate}}</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row my-4">
+    <div class="col-12 mb-3 mb-md-0 col-md-7">
+        <span (click)="goToShipping()" class="dark back font-weight-bold">
+            <img 
+            [ngClass]="localStorage.getLang() == 'en' ? 'mr-2' : 'ml-2'" [ngStyle]="localStorage.getLang() === 'ar' ? {'transform':'rotate(180deg)'} : ''" 
+             src="assets/media/left-arrow.png">
+            {{"back_to_shipping"|translate}}
+        </span>
+    </div>
+    
+    <div class="col-12 col-md-5">
+        <div class="checkout">
+            <button (click)="placeOrder()" mat-button color="primary" class="w-100">{{"place_my_order"|translate}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="card px-3 py-2 mb-4">
+    <div class="card-title d-flex justify-content-between align-items-center">
+        <p *ngIf="product?.discount" class="percent text-white mb-0">{{product?.discount}}</p>
+        <fa-icon class="ml-auto" (click)="toggleFavorite()" [icon]="faHeart" [style.color]="product?.favourite ? '#003366' : '#ded7d7'"></fa-icon>
+    </div>
+    <div class="card-body text-center">
+        <img (click)="goToProduct(product)" [src]="product?.images[0]" class="img-fluid">
+    </div>
+</div>
+<div class="d-flex flex-column font-weight-bold h-100">
+    <h3 (click)="goToProduct(product)" class="font-weight-bold title">{{product?.name}}</h3>
+    <p class="font-weight-bold my-2">{{product?.description | slice:0:50}}</p>
+    <div class="mt-auto">
+        <div class="d-flex justify-content-between align-items-center">
+            <p class="price font-weight-bold">{{product?.discount ? product?.discountedPrice : product?.price}} {{"LE"|translate}}</p>
+            <p *ngIf="product?.discount" class="prev-price">{{product?.price}} {{"LE"|translate}}</p>
+        </div>
+        <ng-container *ngIf="!wishlist">
+            <div *ngIf="showQty" class="stepper border rounded mb-3">
+                <app-stepper [count]="quantity" (countEmitter)="setQuantity($event)" [fullWidth]="true"></app-stepper>
+            </div>
+            <button *ngIf="!showQty" mat-button (click)="showQty = true; addToCart()" [disabled]="product?.qty === 0">{{product?.qty ? ('add_to_cart'|translate) : ('out_of_stock'|translate)}}</button>
+        </ng-container>
+    </div>
+</div>

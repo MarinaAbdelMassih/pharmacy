@@ -1,0 +1,25 @@
+<div class="d-flex mb-2">
+    <button *ngFor="let button of buttons; let i = index" (click)="changeTab(i, target)"
+        [class.active]="i === activeIndex" mat-stroked-button>{{button}}
+    </button>
+</div>
+<div class="row flex-nowrap overflow-hidden mt-4 mb-2" #target>
+    <div class="col-12">
+        <p>
+            {{product?.description}}
+        </p>
+    </div>
+    <div class="col-12">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique eveniet adipisci facilis at minus quibusdam explicabo reiciendis quisquam! Quae praesentium amet ipsum! Placeat, adipisci atque itaque ducimus fugiat deleniti fuga!
+        </p>
+    </div>
+    <div class="col-12">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique eveniet adipisci facilis at minus quibusdam explicabo reiciendis quisquam! Quae praesentium amet ipsum! Placeat, adipisci atque itaque ducimus fugiat deleniti fuga!
+        </p>
+    </div>
+    <!-- <div class="col-12">
+        <app-reviews></app-reviews>
+    </div> -->
+</div>

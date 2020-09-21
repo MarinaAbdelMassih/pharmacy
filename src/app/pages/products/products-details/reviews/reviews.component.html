@@ -1,0 +1,12 @@
+<h5>Write a review</h5>
+<textarea class="form-control" rows="6"></textarea>
+<app-rating [readonly]="true" [type]="'icon'"></app-rating>
+<mat-divider class="my-3"></mat-divider>
+<div class="body">
+    <app-review-item></app-review-item>
+    <mat-divider class="my-4"></mat-divider>
+    <app-review-item></app-review-item>
+</div>
+<div class="paginator">
+    <app-paginator></app-paginator>
+</div>

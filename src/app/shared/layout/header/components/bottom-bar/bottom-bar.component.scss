@@ -1,0 +1,91 @@
+.navbar {
+  box-sizing: content-box;
+  background-color: #fff !important;
+}
+
+.menu {
+  left: 0;
+}
+
+ul {
+  height: 3.5rem;
+}
+
+ul li a {
+  text-decoration: none;
+  color: var(--marine-blue);
+  font-size: 1.4rem;
+  line-height: 3.5rem;
+}
+
+ul li {
+  border-bottom: 0px solid var(--marine-blue);
+  transition: all 150ms ease-in-out;
+  position: relative;
+}
+
+ul li:hover {
+  background-color: #ececec36;
+  border-bottom: 4px solid var(--marine-blue);
+}
+
+.category-dropdown {
+  width: auto;
+  margin: 0;
+  top: unset;
+}
+
+button {
+  background-color: var(--marine-blue);
+  color: #fff;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+}
+
+a {
+  cursor: pointer;
+}
+
+@media (max-width :1200px) and (min-width: 991px) {
+
+  ul li a {
+    font-size: 18px;
+  }
+}
+
+
+@media (max-width : 991px) and (min-width:768px) {
+  ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width : 767px) and (min-width:576px) {
+  ul li a {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width : 575px) and (min-width:518px) {
+  ul li a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width : 576px) {
+  .show {
+    display: none !important;
+  }
+}
+
+@media (max-width : 518px) and (min-width:0px) {
+  ul li a {
+    font-size: 11px;
+  }
+
+  .show {
+    display: none;
+  }
+}

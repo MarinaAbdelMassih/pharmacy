@@ -1,0 +1,201 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$agzza-primary: mat-palette($mat-indigo);
+$agzza-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$agzza-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$agzza-theme: mat-light-theme($agzza-primary, $agzza-accent, $agzza-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($agzza-theme);
+
+/* You can add global styles to this file, and also import other style files */
+html {
+  font-size: 1vw;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Nunito-Regular, Roboto, "Helvetica Neue", sans-serif;
+  text-align: initial;
+}
+
+.font-weight-bold {
+  font-family: Nunito-Bold;
+}
+
+.font-weight-extra-bold {
+  font-family: Nunito-ExtraBold;
+}
+
+.font-weight-medium {
+  font-family: Nunito-Medium;
+}
+
+
+.te-muehldorfer-slider .carousel-indicators li {
+  width: 0% !important;
+}
+
+.mat-typography h2 {
+  font-size: 28px;
+  margin: 30px 0px 30px;
+  color: var(--marine-blue);
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+button {
+  min-height: 3rem;
+  line-height: 100%;
+  &:disabled,
+  &.mat-button[disabled] {
+    opacity: 0.5;
+    color: var(--white) !important;
+  };
+}
+
+button.mat-primary {
+  background-color: var(--marine-blue) !important;
+  color: var(--white) !important;
+}
+
+.dark {
+  color: var(--marine-blue);
+}
+
+.light {
+  color: var(--dark-grey);
+}
+
+.mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover {
+  background-color: inherit !important;
+}
+
+.mat-checkbox-layout .mat-checkbox-label {
+  line-height: 2.5rem;
+}
+
+span.mat-expansion-indicator {
+  margin-right: 0.25rem;
+}
+
+input.form-control {
+  height: 3.5rem;
+  border-radius: 0.5rem !important;
+  border-color: rgb(220, 220, 220);
+}
+
+.ng-invalid.ng-touched,
+button.invalid {
+  border-color: #dc3545 !important;
+  border-width: 1px !important;
+  &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25) !important;
+  }
+}
+
+.dropdown button,
+.dropdown-menu.show {
+  .material-icons {
+    font-size: 1.5rem;
+  }
+
+  font-size: 1.5rem;
+  width: 100%;
+
+  &::after {
+    content: none;
+  }
+}
+
+.dropdown-menu.show {
+  width: 100%;
+
+  a {
+    min-height: 2.5rem;
+    line-height: 2.5rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    cursor: pointer;
+
+    &:active {
+      background-color: var(--marine-blue);
+      color: var(--white);
+    }
+  }
+}
+
+.toast-info {
+  color: white !important;
+  background-color: var(--light-green) !important;
+  font-size: 1.25rem;
+}
+
+small {
+  font-size: 85%;
+}
+
+*:focus {
+  outline: 0;
+}
+
+@media (max-width: 1024px) {
+
+  html,
+  body {
+    font-size: 1.3vw;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    font-size: 1.85vw;
+  }
+}
+
+@media (max-width: 575px) {
+
+  html,
+  body {
+    font-size: 3vw;
+  }
+}
+
+
+.mat-tab-labels{display:flex;
+  justify-content: space-between;}
+  
+.mat-tab-body-content{
+  overflow: hidden !important;
+}

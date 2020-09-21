@@ -1,0 +1,20 @@
+.rtl {
+  .navbar {
+    form {
+      fa-icon {
+        left: 0.25rem;
+      }
+    }
+  }
+  .stepper {
+    .step {
+      &.active[label*="معلومات"] {
+        background-image: url(~src/assets/media/van.png);
+      }
+
+      &.active[label*="طريقة"] {
+        background-image: url(~src/assets/media/wallet.png);
+      }
+    }
+  }
+}

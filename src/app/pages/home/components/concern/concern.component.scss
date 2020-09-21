@@ -1,0 +1,30 @@
+.concern {
+    &:last-of-type {
+        .bgcol {
+            img {
+                width: 5rem;
+                height: 5rem;
+            }
+        }
+    }
+
+    .bgcol {
+        background-color: var(--light-green);
+        padding: 2.25rem 1.85rem;
+        border-radius: 0.5rem;
+        height: 10rem;
+
+        img {
+            height: 6rem;
+        }
+
+        h2 {
+            white-space: break-spaces;
+            width: 50%;
+        }
+    }
+}
+
+h2 {
+    color: var(--marine-blue)
+}

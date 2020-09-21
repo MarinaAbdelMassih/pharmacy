@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <app-breadcrumbs segments="{{'Home_Product'|translate}} / {{product?.name}}"></app-breadcrumbs>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+            <app-image-viewer [product]="product"></app-image-viewer>      
+        </div>
+        <div class="col-12 col-md-6">
+            <app-item-details [product]="product"></app-item-details>
+        </div>
+    </div>
+    <mat-divider class="mb-5 mt-4"></mat-divider>
+    <div class="row">
+        <div class="col-12 col-md-11 mx-auto">
+            <app-product-tabs [product]="product"></app-product-tabs>
+        </div>
+    </div>
+    <section class="mb-3">
+        <app-product-cart [collection]="relatedProducts" [title]="'Related_Products'|translate"></app-product-cart>
+    </section>
+</div>

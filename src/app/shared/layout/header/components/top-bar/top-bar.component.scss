@@ -1,0 +1,66 @@
+.navbar {
+    padding: 0px !important;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+    cursor: pointer;
+    &:hover {
+        color: var(--marine-blue);
+    }
+}
+
+fa-icon {
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 0.255em;
+}
+
+.afterline::after {
+    content: "|";
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin: 0px 17px;
+    // border: 1px solid #fff;
+
+
+}
+
+.navbar-collapse {
+    .dropdown-menu {
+        background-color: var(--marine-blue);
+        border: none;
+        a {
+            color: white;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 991px) and (min-width: 0px) {
+    .afterline::after {
+        display: none;
+    }
+}
+
+
+.bg {
+    background-color: var(--marine-blue);
+    
+    color: #fff;
+
+}
+
+button {
+    background-color: var(--marine-blue);
+    border: none;
+    color: #fff;
+}
+
+.dropdown-item {
+    font-size: 1rem;
+}

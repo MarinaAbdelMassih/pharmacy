@@ -1,0 +1,13 @@
+<div class="container">
+    <app-slider [slider]="slider"></app-slider>
+    <app-concern></app-concern>
+    <section class="mb-3" *ngFor="let collection of collections">
+        <app-product-cart [collection]="collection"></app-product-cart>
+    </section>
+    <div class="banner row py-5">
+        <div class="col-12">
+            <img src="assets/media/nivea.jpg" class="img-fluid">
+        </div>
+    </div>
+    <app-agzza-app></app-agzza-app>
+</div>

@@ -1,0 +1,35 @@
+/*page cooker*/
+
+
+.colorPara{color: rgb(255, 198 , 40);}
+
+.img1{width:200px; height:200px; padding-right: 20px;}
+.img2{width:400px; height:300px;}
+.brdr{border :1px solid gray;
+padding :10px 10px 0px;
+margin: 10px 10px 10px 0px;}
+
+ul li::after {
+    width:20px;
+    height: 20px;
+    color: rgb(255, 198 , 40);
+    background-color: rgb(255, 198 , 40);
+    position: relative;
+    top:0px;
+    right:0px;
+}
+fa-icon{color:red;}
+
+button {
+    background-color: rgb(255, 198 , 40);
+   // border-radius: 0.5rem;
+    border: 1px solid transparent;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    
+}
+/*end page cooker*/
+/*
+.home{
+    color:rgb(220 ,220, 220);}
+*/

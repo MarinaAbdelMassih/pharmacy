@@ -1,0 +1,26 @@
+<section class="d-none d-lg-block show bg-white mb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+            <mat-divider></mat-divider>
+            <div class="row m-auto">
+                <ul (mouseleave)="activeCategory = -1" class="list-unstyled d-flex w-100 my-auto p-0">
+                    <li class="px-2" (mouseover)="activeCategory = i" 
+                    *ngFor="let category of categories; let i = index"
+                     [ngClass]="localStorage.getLang() === 'en' ? 'mr-3' : 'ml-3'">
+                        <a routerLink="products/{{category.slug}}" [state]="{ category: category }"
+                         class="font-weight-bold text-capitalize">{{category.name}}</a>
+                        <div *ngIf="activeCategory === i && category.subCategories?.length"
+                         class="menu position-absolute"
+                        [ngStyle]="localStorage.getLang() === 'en' ? {'left': '0'} : {'right': '0'}">
+                            <app-categories-menu (hideMenu)="activeCategory = -1"
+                             [categories]="category.subCategories"></app-categories-menu>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <mat-divider></mat-divider>
+            </div>
+        </div>
+    </div>
+</section>

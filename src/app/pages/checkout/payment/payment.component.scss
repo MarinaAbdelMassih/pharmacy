@@ -1,0 +1,126 @@
+.cont {
+  border-bottom: 1px solid #ced4daa1;
+  width: 100%;
+  padding: 1rem;
+}
+
+.space {
+  padding: 15px;
+}
+
+img {
+  max-width: 10rem;
+  max-height: 6rem;
+  padding-right: 1rem;
+}
+
+.list-group {
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.summary p {
+  font-size: 1.2rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+}
+
+button {
+  background-color: var(--marine-blue);
+  border-radius: 0.5rem;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 1.4rem;
+}
+
+.containerr {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.containerr input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: 4px;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.containerr:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.containerr input:checked~.checkmark {
+  background-color: #fff;
+  border: 2px solid var(--marine-blue);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.containerr input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.containerr .checkmark:after {
+
+  top: 2px;
+  left: 2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--marine-blue);
+}
+
+.back {
+  cursor: pointer;
+  font-size: 1.4rem;
+
+  img {
+    width: 2rem;
+    height: auto;
+    padding: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .buttons {
+    margin-top: 2rem;
+    flex-direction: column;
+
+    .back,
+    button {
+      width: 100%;
+    }
+
+    button {
+      margin-top: 1rem;
+    }
+  }
+}

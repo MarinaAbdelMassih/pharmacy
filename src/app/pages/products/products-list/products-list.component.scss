@@ -1,0 +1,48 @@
+.grid {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, minmax(30%, 1fr));
+
+    app-product-item {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.placeholder {
+    color: var(--dark-grey);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10rem 2rem;
+}
+
+.header {
+    height: 3rem;
+}
+
+.pagination {
+    width: 70%;
+}
+
+button {
+    width: 100%;
+    background-color: #f7f7f7;
+}
+
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(30%, 1fr));
+        grid-gap: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .grid {
+        grid-template-columns: 100%;
+    }
+}

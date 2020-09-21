@@ -1,0 +1,272 @@
+<section>
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-12">
+                <app-breadcrumbs [segments]="'Home > Cooker Page'"></app-breadcrumbs>
+            </div>
+        </div>
+         <hr>
+         <div class="row">
+             <div class="col-12">
+                 <div class="d-flex my-5">
+                     <img src="assets/media/meme.png" alt="" class="img1">
+                     <div>
+                         <h2 class="font-weight-bold mb-4">Meme Kamal</h2>
+                         <p class="colorPara font-weight-bold mb-4">Food , Healthy</p>
+                         <h5 class="font-weight-bold mb-5"> <fa-icon [icon]="faMapMarkerAlt" class="mr-2"></fa-icon> Maadi , Cairo</h5>
+                    
+                     <div class="d-flex">
+                        <fa-icon [icon]="faStar"  class="mr-1"></fa-icon> 
+                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                     </div>
+                    </div>
+                 </div>
+             </div>
+         </div>
+          <hr>
+         <div class="row">
+             <div class="col-12">
+                 <mat-tab-group>
+                     <mat-tab label="About">
+
+                            <h3 class="font-weight-bold my-5">Bio</h3>
+                            <hr>
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid accusamus sequi reprehenderit itaque provident explicabo,
+                                 saepe qui at. Quo accusantium libero fugit voluptatibus dicta modi cum ex cumque, fugiat enim.</p>
+
+                            <hr>  
+                            <h3 class="font-weight-bold my-5">What I'II Cook</h3>   
+                            <hr>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"> Homemade Tamales</li>
+                                <li class="mb-3">Tiacoyas</li>
+                                <li class="mb-3">Tacos De Canasta</li>
+                                <li class="mb-3">Seafood Tostadas</li>
+                                <li class="mb-3">Cemilias</li>
+                                <li class="mb-3">Pambazos, And More</li>
+                            </ul>
+                            <hr>  
+                            <h3 class="font-weight-bold my-5">Available Days</h3>   
+                            <hr>
+                            <div class="d-flex">
+                               <div class="brdr text-center">
+                                   <p class="text-muted">Sunday</p>
+                                   <p class="text-muted">09:10-10:30</p>
+
+                               </div>
+                               <div class="brdr text-center">
+                                    <p class="text-muted">Monday</p>
+                                    <p class="text-muted">09:10-10:30</p>
+                               </div>
+                               <div class="brdr text-center">
+                                    <p class="text-muted">Tuesday</p>
+                                    <p class="text-muted">09:10-10:30</p>
+                               </div>
+                               <div class="brdr text-center">
+                                    <p class="text-muted">Wensday</p>
+                                    <p class="text-muted">09:10-10:30</p>
+                               </div>
+                               <div class="brdr text-center">
+                                    <p class="text-muted">Thrusday</p>
+                                    <p class="text-muted">09:10-10:30</p>
+                               </div>
+                               <div class="brdr text-center">
+                                    <p class="text-muted">Friday</p>
+                                    <p class="text-muted">09:10-10:30</p>
+                             </div>
+                            </div>
+                     </mat-tab>
+                     <mat-tab label="Menu For Day">
+
+                        <div class="row my-5">
+                            <div class="col-lg-6 ">
+                                <img src="assets/media/akl.png" alt="" class="img2">
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class="d-flex justify-content-between">
+
+                                    <h2 class="font-weight-bold">chicken Mango </h2>
+                                    <div class="d-flex">
+                                        <fa-icon [icon]="faStar"  class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                     </div>
+                                </div>
+                                <hr>
+                                <div>
+                                    <h3 class="font-weight-bold"> Description </h3>
+                                    <p class="text-muted">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat est excepturi dolores quod nostrum ex ad corrupti tempore cum,
+                                         veritatis, voluptate debitis! 
+                                    </p>
+                                    <hr>
+                                    <h3 class="font-weight-bold"> Ingredients </h3>
+                                    <p class="text-muted">
+                                       nice , sweet potatos , qunoa 
+                                    </p>
+                                    <hr>
+                                    <h3 class="font-weight-bold">Calorific </h3>
+                                    <p class="text-muted">
+                                       180 Calories
+                                    </p>
+                                    <hr>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h3 class="font-weight-bold">Quantity </h3>
+                                    <button mat-button type="button" class=" py-1 text-white">Add to Cart</button>
+
+                                </div>
+                                <hr>
+                                <div class="d-flex">
+                                    <fa-icon [icon]="faHeart"  class="mr-4"></fa-icon> 
+                                    <p class="colorPara"> Add to Favourite</p>
+                                </div>
+                            </div>
+                        </div>
+                     </mat-tab>
+                     <mat-tab label="Menu For All Week">
+                         <div class="row my-5">
+                             <div class="col-12">
+
+                           
+                        <div class="d-flex justify-content-between">
+                                <div class="brdr text-center">
+                                        <p class="text-muted">Saturday</p>
+                                       
+        
+                                    </div>
+                            <div class="brdr text-center">
+                                <p class="text-muted">Sunday</p>
+                               
+
+                            </div>
+                            <div class="brdr text-center">
+                                 <p class="text-muted">Monday</p>
+                                
+                            </div>
+                            <div class="brdr text-center">
+                                 <p class="text-muted">Tuesday</p>
+                                
+                            </div>
+                            <div class="brdr text-center">
+                                 <p class="text-muted">Wensday</p>
+                                
+                            </div>
+                            <div class="brdr text-center">
+                                 <p class="text-muted">Thrusday</p>
+                                
+                            </div>
+                            <div class="brdr text-center">
+                                 <p class="text-muted">Friday</p>
+                                 
+                          </div>
+                         </div>
+
+                        </div>
+                    </div>
+                     </mat-tab>
+                     <mat-tab label="Reviews">
+                         <div class="row">
+                             <div class="col-12">
+                                 <h2 class="colorPara my-5"><span> (4)</span> Reviews </h2>
+
+                                 <hr>
+                             </div>
+                            
+                             <div class="col-12">
+                                 <h2 class="my-2">Give your Rate </h2>
+                                 <div class="d-flex mb-3">
+                                        <fa-icon [icon]="faStar"  class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                     </div>
+                                     <h2>Write Your Review</h2>
+                                     <textarea class="p-2 w-100" ></textarea>
+                                     <button mat-button type="button" class="float-right my-3  py-1 text-white">Submit</button>
+                                
+                             </div>
+                             <div class="col-12">
+                                 <h2>By User Guest</h2>
+                                 <small class="text-muted mb-3">on 22 nov</small>
+                                 <h2 class="mb-3">Lorem ipsum dolor sit amet consectetur .</h2>
+                                 <div class="d-flex">
+                                        <fa-icon [icon]="faStar"  class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                        <fa-icon [icon]="faStar" class="mr-1"></fa-icon> 
+                                     </div>
+                                     <hr>
+                             </div>
+                         </div>
+                     </mat-tab>
+                 </mat-tab-group>
+             </div>
+         </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">
+ 
+    <div class="row mb-4">
+        <div class="col-12">
+            <app-breadcrumbs [segments]="'Home_Shipping_and_Delivery'|translate"></app-breadcrumbs>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="dark font-weight-bold">{{"shipping_and_delivery"|translate}}</h2>
+        </div>
+    </div>
+
+
+    <h3  class="dark font-weight-bold mb-4">What are supported shipping methods on Agzza ?</h3>
+
+    <p class="para mb-5 font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam modi quasi ab esse mollitia voluptatum pariatur iure, unde voluptas ex expedita illo nemo consequuntur eius quis dolores corporis officiis dignissimos.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas nisi iusto ipsa placeat quos velit dicta unde, neque consequuntur voluptatibus ut quo nam officiis quidem repellendus modi ab cumque sequi.
+
+        </p>
+        <p class="para mb-4 font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ipsum, eaque blanditiis asperiores officia autem quos placeat praesentium ipsa cum delectus inventore quia vel laudantium? Quasi nobis et repudiandae architecto!
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ipsum, eaque blanditiis asperiores officia autem quos placeat praesentium ipsa cum delectus inventore quia vel laudantium?
+        </p>
+        <p class="para mb-3 font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ipsum, eaque blanditiis asperiores officia autem quos placeat praesentium ipsa cum delectus inventore quia vel laudantium? Quasi nobis et repudiandae architecto!
+
+            </p>
+            <p class="para mb-5 font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ipsum, eaque blanditiis asperiores officia autem quos placeat praesentium ipsa cum delectus inventore quia vel laudantium? Quasi nobis et repudiandae architecto!
+
+                </p>
+                <p class="para mb-5 font-weight-bold"> ipsa cum delectus inventore quia vel laudantium? Quasi nobis et repudiandae architecto!
+
+                </p>
+</div>-->
+
+
+
+
+
+
+
+
+

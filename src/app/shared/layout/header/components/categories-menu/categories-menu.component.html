@@ -1,0 +1,24 @@
+<div class="d-flex">
+    <div class="dropdown-menu show">
+        <a *ngFor="let category of categories; let i = index" 
+        (mouseover)="activeCategoryIndex = i" 
+        (click)="viewCategory()"
+        class="dropdown-item d-flex align-items-center" 
+        routerLink="/products/{{category.slug}}"
+        [state]="{ category: category }">
+        {{category.name}} 
+        <span *ngIf="category.subCategories.length" class="material-icons ml-auto pl-4">
+            chevron_right
+        </span>
+        </a>
+    </div>
+    <div *ngIf="categories[activeCategoryIndex]?.subCategories?.length" [style.top]="'calc(3rem * ' + activeCategoryIndex + ')'" class="dropdown-menu sub show">
+        <a 
+        *ngFor="let subCategory of categories[activeCategoryIndex]?.subCategories"
+        (click)="viewCategory()" 
+        class="dropdown-item" 
+        routerLink="/products/{{subCategory.slug}}">
+        {{subCategory.name}}
+        </a>
+    </div>
+</div>

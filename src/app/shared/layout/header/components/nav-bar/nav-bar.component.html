@@ -1,0 +1,33 @@
+<div class="container border-bottom mb-lg-0 mb-3">
+  <div class="row">
+    <nav class="navbar navbar-expand-lg bg-white px-0 py-3 w-100">
+      <div class="col-12 col-md-6 col-lg-3 mb-3 mb-md-0">
+        <a routerLink="/" class="navbar-brand">
+          <img src="assets/media/agzza.jpg" />
+        </a>
+      </div>
+      <div class="col-12 col-md-6 mb-3 mb-md-0 col-lg-3">
+        <form class="form-inline position-relative">
+          <fa-icon (click)="onSearch(search.value)" id="searchIcon" [icon]="faSearch"></fa-icon>
+          <input #search (keyup.enter)="onSearch($event.target.value)" id="search" class="form-control w-100" 
+          type="search" placeholder="{{'search_your_items'|translate}}" aria-label="Search">
+        </form>
+      </div>
+      <div class="col-12 col-md-12 col-lg-6 d-none d-lg-block" [ngClass]="localStorage.getLang() === 'en' ? 'pl-lg-5' : 'pr-lg-5'">
+        <div class="d-flex justify-content-between align-items-center nav-items">
+          <a routerLink="brands" class="font-weight-bold">{{"brands"|translate}}</a>
+          <!-- <a class="font-weight-bold">Dr. Call</a> -->
+          <a routerLink="delivery" class="font-weight-bold">{{"delivery_area"|translate}}</a>
+          <a class="font-weight-bold">{{"support"|translate}}</a>
+          <button (click)="goToCart()" class="cart d-flex align-items-center">
+            <fa-icon [icon]="faShoppingCart" class="px-2"></fa-icon> 
+            <span class="font-weight-bold" id="text">
+              {{"my_cart"|translate}}
+            </span>
+            <span class="percent">{{cartManager.cartItems.value.length}}</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    </div>
+  </div>

@@ -1,0 +1,126 @@
+.bg {
+  background-color: var(--marine-blue);
+  color: #fff;
+  border: none;
+  margin: 0px 5px;
+  border-radius: 0.4rem;
+}
+
+.sign {
+  color: var(--marine-blue);
+  background-color: #fff;
+  border: 1px solid var(--marine-blue);
+  margin: 0px 5px;
+  border-radius: 0.4rem;
+}
+
+.nav-items {
+  font-size: 1.2rem;
+}
+
+
+.cart fa-icon {
+  color: var(--light-green);
+  font-size: 1.2rem;
+}
+
+.cart #text {
+  width: 4rem;
+  font-size: 0.8rem;
+}
+
+.cart {
+  color: var(--marine-blue);
+  background-color: #fff;
+  font-weight: 500px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 0.5rem;
+  min-height: 2.5rem;
+  padding: 0;
+}
+
+.bg,
+.sign {
+  padding: 6px 9px;
+}
+
+form {
+  #search {
+    font-size: 0.8rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  #searchIcon {
+    cursor: pointer;
+  }
+
+  fa-icon {
+    position: absolute;
+    background: var(--marine-blue);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    height: 2rem;
+    top: 50%;
+    width: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    transform: translateY(-50%);
+  }
+}
+
+::placeholder {
+  color: #e6e6e6;
+
+}
+
+a {
+  color: var(--marine-blue);
+}
+
+
+.navbar {
+  margin-bottom: 0px !important;
+}
+
+.percent {
+  border-radius: 0.5rem;
+  background-color: var(--marine-blue);
+  height: 2rem;
+  width: 2rem;
+  color: #fff;
+  margin-left: 5px;
+  line-height: 2rem;
+  font-size: 0.75rem;
+  margin-right: 0.25rem;
+}
+
+@media (min-width: 992px) {
+  .container {
+    border-bottom: none !important;
+  }
+}
+
+
+@media (max-width : 991px) and (min-width:768px) {
+  .last {
+    padding-top: 7px;
+  }
+}
+
+@media (max-width : 767px) {
+  .last {
+    padding-top: 7px;
+
+  }
+
+
+}
+
+@media (max-width : 576px) {
+  .show {
+    display: none !important;
+  }
+}

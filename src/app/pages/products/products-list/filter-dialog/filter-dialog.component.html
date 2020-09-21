@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div id="title" class="col-10">
+            {{"filter_results"|translate}}
+        </div>
+        <div (click)="close()" class="col-2 text-right">
+            <span class="material-icons">
+                close
+            </span>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+    <div class="row">
+        <div class="col-12 mb-3 pb-3 border-bottom">
+            <app-filter [title]="'brand'|translate"></app-filter>
+        </div>
+        <div class="col-12 mb-3 pb-3 border-bottom">
+            <app-filter [title]="'type'|translate"></app-filter>
+        </div>
+        <div class="col-12 border-bottom">
+            <app-range-slider></app-range-slider>
+        </div>
+        <div class="col-12 mb-2 pt-3">
+            <app-filter [title]="'tape'|translate"></app-filter>
+        </div>
+    </div>
+</div>

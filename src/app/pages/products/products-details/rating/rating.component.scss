@@ -1,0 +1,13 @@
+.wrapper {
+    text {
+        font-size: 1.2vw;
+    }
+    .progress {
+        flex-grow: 1;
+        border-radius: 0;
+
+        .progress-bar {
+            background-color: var(--twilight-blue);
+        }
+    }
+}
